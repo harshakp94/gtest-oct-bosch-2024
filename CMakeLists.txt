@@ -20,6 +20,7 @@ add_executable(
   unittestcode
   TestCases.cpp
   stringCalculator.cpp
+  stringCalculator.Tests.cpp
  
  )
 target_link_libraries(
