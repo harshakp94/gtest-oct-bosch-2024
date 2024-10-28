@@ -95,7 +95,7 @@ TEST(string_calculator_add,when_passed_negative_numbers_throws_an_exception_list
   int actualValue = objUndertest.Add(input);
   //Assert
     try {
-        calculator.Add("1,-2,-4,5");
+        int actualValue = objUndertest.Add(input);
         FAIL() << "Expected invalid_argument exception";
     } catch (const std::invalid_argument& e) {
         // Use ASSERT_STREQ to verify the exception message
