@@ -48,3 +48,27 @@ TEST(string_calculator_add, when_passed_two_comma_delimited_numbers_returns_thei
   //Assert
   ASSERT_EQ(expectedValue, actualValue);
 }
+
+TEST(string_calculator_add, when_passed_multiple_comma_delimited_numbers_returns_their_sum){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "1,2,3";
+  int expectedValue = 6;
+
+  //act
+  int actualValue = objUndertest.Add(input);
+  //Assert
+  ASSERT_EQ(expectedValue, actualValue);
+}
+
+TEST(string_calculator_add,when_delimited_with_newline_and_comma_returns_their_sum){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "1\n2,3";
+  int expectedValue = 6;
+
+  //act
+  int actualValue = objUndertest.Add(input);
+  //Assert
+  ASSERT_EQ(expectedValue, actualValue);
+}
