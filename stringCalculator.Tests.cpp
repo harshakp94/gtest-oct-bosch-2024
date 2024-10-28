@@ -94,5 +94,5 @@ TEST(string_calculator_add,when_passed_negative_numbers_throws_an_exception_list
   //act
   int actualValue = objUndertest.Add(input);
   //Assert
-  ASSERT_EQ(expectedValue, actualValue);
+   ASSERT_STREQ(e.what(), "Negatives not allowed: -2,-4");
 }
