@@ -36,3 +36,15 @@ TEST(string_calculator_add, when_passed_a_single_number_returns_1_for_one){
   //Assert
   ASSERT_EQ(expectedValue, actualValue);
 }
+
+TEST(string_calculator_add, when_passed_two_comma_delimited_numbers_returns_their_sum){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "1,2";
+  int expectedValue = 3;
+
+  //act
+  int actualValue = objUndertest.Add(input);
+  //Assert
+  ASSERT_EQ(expectedValue, actualValue);
+}
