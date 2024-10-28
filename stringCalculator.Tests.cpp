@@ -72,3 +72,27 @@ TEST(string_calculator_add,when_delimited_with_newline_and_comma_returns_their_s
   //Assert
   ASSERT_EQ(expectedValue, actualValue);
 }
+
+TEST(string_calculator_add,when_passed_a_delimiter_returns_the_sum_based_on_that_delimiter){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "//;\n1;2";
+  int expectedValue = 3;
+
+  //act
+  int actualValue = objUndertest.Add(input);
+  //Assert
+  ASSERT_EQ(expectedValue, actualValue);
+}
+
+TEST(string_calculator_add,when_passed_negative_numbers_throws_an_exception_listing_invalid_values){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "1,-2,-4,5";
+  int expectedValue = 6;
+
+  //act
+  int actualValue = objUndertest.Add(input);
+  //Assert
+  ASSERT_EQ(expectedValue, actualValue);
+}
