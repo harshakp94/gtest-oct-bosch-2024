@@ -85,28 +85,6 @@ TEST(string_calculator_add,when_passed_a_delimiter_returns_the_sum_based_on_that
   ASSERT_EQ(expectedValue, actualValue);
 }
 
-// TEST(string_calculator_add,when_passed_negative_numbers_throws_an_exception_listing_invalid_values){
-//   //Arrange
-//   StringCalculator objUndertest;
-//   string input = "1,-2,-4,5";
-//   int expectedValue = 6;
-
-//   //act
-//   int actualValue = 
-
-//     // Use ASSERT_THROW to verify that an exception of type invalid_argument is thrown
-//     ASSERT_THROW({
-//        objUndertest.Add(input);
-//     }, std::invalid_argument);
-
-//     // Capture the exception and check its message
-//     try {
-//         calculator.Add("1,-2,-4,5");
-//     } catch (const std::invalid_argument& e) {
-//         EXPECT_STREQ(e.what(), "Negatives not allowed: -2,-4");
-//     }
-// }
-
 TEST(string_calculator_add,when_passed_numbers_over_1000_ignores_them){
   //Arrange
   StringCalculator objUndertest;
@@ -153,4 +131,22 @@ TEST(string_calculator_add,when_passed_multiple_multicharacter_delimiters_sums_o
   int actualValue = objUndertest.Add(input);
   //Assert
   ASSERT_EQ(expectedValue, actualValue);
+}
+
+TEST(string_calculator_add,when_passed_negative_numbers_throws_an_exception_listing_invalid_values){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "1,-2,-4,5";
+  int expectedValue = 6;
+
+  //act
+    ASSERT_THROW({
+      objUndertest.Add(input);
+    }, std::invalid_argument);
+
+    try {
+        calculator.Add("1,-2,-4,5");
+    } catch (const std::invalid_argument& e) {
+        EXPECT_STREQ(e.what(), "Negatives not allowed: -2,-4");
+    }
 }
