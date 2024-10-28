@@ -12,3 +12,15 @@ TEST(string_calculator_add, when_passed_a_single_number_returns_0_for_empty){
   //Assert
   ASSERT_EQ(expectedValue, actualValue);
 }
+
+TEST(string_calculator_add, when_passed_a_single_number_returns_0_for_zero){
+  //Arrange
+  StringCalculator objUndertest;
+  string input = "0";
+  int expectedValue = 0;
+
+  //act
+  int actualValue = objUndertest.Add(input);
+  //Assert
+  ASSERT_EQ(expectedValue, actualValue);
+}
