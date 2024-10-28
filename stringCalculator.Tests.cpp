@@ -10,5 +10,5 @@ TEST(string_calculator_add, when_passed_a_single_number_returns_0_for_empty){
   //act
   int actualValue = objUndertest.Add(input);
   //Assert
-  ASSERT_EQ(expectedValue, actualValue)
+  ASSERT_EQ(expectedValue, actualValue);
 }
