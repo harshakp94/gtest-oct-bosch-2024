@@ -92,15 +92,17 @@ TEST(string_calculator_add,when_passed_negative_numbers_throws_an_exception_list
   int expectedValue = 6;
 
   //act
-  int actualValue = objUndertest.Add(input);
-  //Assert
+  int actualValue = 
+
+    // Use ASSERT_THROW to verify that an exception of type invalid_argument is thrown
+    ASSERT_THROW({
+       objUndertest.Add(input);
+    }, std::invalid_argument);
+
+    // Capture the exception and check its message
     try {
-        int actualValue = objUndertest.Add(input);
-        FAIL() << "Expected invalid_argument exception";
+        calculator.Add("1,-2,-4,5");
     } catch (const std::invalid_argument& e) {
-        // Use ASSERT_STREQ to verify the exception message
-        ASSERT_STREQ(e.what(), "Negatives not allowed: -2,-4");
-    } catch (...) {
-        FAIL() << "Expected invalid_argument exception";
+        EXPECT_STREQ(e.what(), "Negatives not allowed: -2,-4");
     }
 }
