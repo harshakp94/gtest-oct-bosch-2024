@@ -84,7 +84,7 @@ TEST_F(StringCalculatorAddFixture,  when_passed_negative_numbers_throws_an_excep
     string input = "1,-2,-4,5";
     int expectedValue=6;
    ASSERT_THROW({
-      objUndertest.Add(input);
+      objUnderTest.Add(input);
     }, std::invalid_argument);
 }
 
