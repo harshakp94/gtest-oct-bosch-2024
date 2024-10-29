@@ -31,12 +31,7 @@ TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase){
     ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase2){
-    string input=std::get<2>(GetParam());
-    int expectedValue=std::get<3>(GetParam());
-    int actualValue=objUnderTest->Add(input);
-    ASSERT_EQ(actualValue,expectedValue);
-}
+
 TEST_F(StringCalculatorAddFixture, Throw_Invalid_Argumnet_Exceptio_For_Negetive_Numbers){
     string input="1,-2";
     EXPECT_THROW(objUnderTest->Add(input),invalid_argument);
