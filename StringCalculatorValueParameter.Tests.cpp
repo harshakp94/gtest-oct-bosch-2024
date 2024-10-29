@@ -31,7 +31,7 @@ TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase){
     ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase){
+TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase2){
     string input=std::get<2>(GetParam());
     int expectedValue=std::get<3>(GetParam());
     int actualValue=objUnderTest->Add(input);
