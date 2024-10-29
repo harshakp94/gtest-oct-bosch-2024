@@ -12,8 +12,6 @@ protected:
 };
 
 TEST_F(AddFunctionTest, AddsTwoNumbersCorrectly) {
-    testing::internal::CaptureStdout();
     add(3, 5, &result);
-    std::string output = testing::internal::GetCapturedStdout();
     ASSERT_EQ(result, 8);
 }
