@@ -12,6 +12,7 @@ protected:
 };
 
 TEST_F(AddFunctionTest, AddsTwoNumbersCorrectly) {
+    testing::internal::CaptureStdout();
     add(3, 5, &result);
     ASSERT_EQ(result, 8);
 }
