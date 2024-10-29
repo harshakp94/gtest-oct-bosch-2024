@@ -41,3 +41,8 @@ TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase){
     ASSERT_EQ(actualValue,expectedValue);
 }
 
+TEST_F(StringCalculatorAddFixture, Throw_Invalid_Argument_For_Neg_Number){
+    string input="-3,-1,-14";
+    EXPECT_THROW(objUnderTest->Add(input),invalid_argument);
+  }
+
